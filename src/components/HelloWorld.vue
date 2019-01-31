@@ -6,27 +6,27 @@
 </template>
 
 <script>
-  const stream = weex.requireModule('stream')
-  export default {
-    data () {
-      return {
-        count: 'fetching...'
-      }
-    },
-    created () {
-      stream.fetch({
-        method: 'GET',
-        type: 'json',
-        url: 'https://api.github.com/repos/vuejs/vue'
-      }, res => {
-        if (res.ok) {
-          this.count = res.data.stargazers_count
-        } else {
-          this.count = '- unknown -'
-        }
-      })
+const stream = weex.requireModule('stream')
+export default {
+  data () {
+    return {
+      count: 'ddd...'
     }
+  },
+  created () {
+    stream.fetch({
+      method: 'GET',
+      type: 'json',
+      url: 'https://api.github.com/repos/vuejs/vue'
+    }, res => {
+      if (res.ok) {
+        this.count = res.data.stargazers_count
+      } else {
+        this.count = '- unknown -'
+      }
+    })
   }
+}
 </script>
 
 <style scoped>
